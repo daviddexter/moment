@@ -1,7 +1,6 @@
 package moment
 
 import (
-	"fmt"
 	"strings"
 	"time"
 )
@@ -67,15 +66,15 @@ func HumanizeDuration(d time.Duration) map[string]int64 {
 	ds := d.String()
 	//contains := strings.ContainsAny(ds, "h &m & s")
 	if strings.Contains(ds, "h") == true && strings.Contains(ds, "m") == true && strings.Contains(ds, "s") == true {
-		fmt.Println("line 69")
+
 		fm = splitterFull(ds)
 	}
 	if strings.Contains(ds, "h") == false && strings.Contains(ds, "m") == true && strings.Contains(ds, "s") == true {
-		fmt.Println("line 73")
+
 		fm = splitterWithoutHour(ds)
 	}
 	if strings.Contains(ds, "h") == false && strings.Contains(ds, "m") == false && strings.Contains(ds, "s") == true {
-		fmt.Println("line 77")
+
 		fm = splitterWithoutMinutes(ds)
 	}
 	return fm
