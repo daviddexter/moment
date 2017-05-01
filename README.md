@@ -1,13 +1,8 @@
 Moment package implements as inspired by momentjs
 
 Extract the time duration from unix seconds
-Usage:
-MomentFromSeconds(time.Now().Unix())
-
 
 Extract the time duration from unix nanoseconds
-Usage:
-MomentFromSeconds(time.Now().UnixNano())
 
 Extract the time duration seconds of two different time points
 
@@ -31,21 +26,20 @@ Usage
     //get duration from now and unix epoch in seconds
 
     d := moment.MomentFromSeconds(time.Now().Unix())
+    dd := moment.HumanizeDuration(d)
+
 
     //get duration from now and unix epoch in nanoseconds
 
     e := moment.MomentFromNanoSeconds(time.Now().UnixNano())
+    ee := moment.HumanizeDuration(e)
 
     //get duration between two points in seconds
 
     f := moment.MomentFromSecondsPoints(pA,pB)
+    ff := moment.HumanizeDuration(f)
 
     The same applies for MomentFromNanoSecondsPoints function
-
-    //Humanize time lapse.
-    //Instead of returning the difference in " ... ago " format, moment returns the elapse time as a map
-
-    h := moment.HumanizeDuration(time.Duration)
 
     //To add leaps
     l := moment.UtilBuilder{momemt.Operation,moment.Leap,moment.Step}
