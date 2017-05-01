@@ -5,8 +5,6 @@ import (
 	"time"
 )
 
-/* Moment package implements as inspired by momentjs*/
-
 //Extract the time duration from unix seconds
 //Usage:
 //MomentFromSeconds(time.Now().Unix())
@@ -18,7 +16,7 @@ func MomentFromSeconds(sec int64) time.Duration {
 
 //Extract the time duration from unix nanoseconds
 //Usage:
-//MomentFromSeconds(time.Now().UnixNano())
+//MomentFromNanoSeconds(time.Now().UnixNano())
 func MomentFromNanoSeconds(sec int64) time.Duration {
 	e := time.Unix(sec, 0)
 	d := time.Now().Sub(e)

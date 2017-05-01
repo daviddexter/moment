@@ -1,4 +1,4 @@
-Moment package implements as inspired by momentjs
+/*Moment package implements as inspired by momentjs
 
 Extract the time duration from unix seconds
 Usage:
@@ -50,3 +50,7 @@ Usage
     //To add leaps
     l := moment.UtilBuilder{momemt.Operation,moment.Leap,moment.Step}
 
+
+*/
+
+package moment
