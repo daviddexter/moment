@@ -16,4 +16,4 @@ Extract the time duration nanoseconds of two different time points
 Represents time duration as a map for fast readabilty and usage
 with keys of "hours","minutes","seconds"
 
-Add leaps to time. Leaps of Hour,Day,week and year
+Add leaps operations to time. Leaps of Hour,Day,week and year
