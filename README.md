@@ -43,7 +43,7 @@ Usage
     The same applies for MomentFromNanoSecondsPoints function
 
     //Humanize time lapse.
-    //Instead of returning the differenc in " ... ago " format, moment returns the elapse time as a map
+    //Instead of returning the difference in " ... ago " format, moment returns the elapse time as a map
 
     h := moment.HumanizeDuration(time.Duration)
 
