@@ -1,3 +1,5 @@
+[![Coverage Status](https://coveralls.io/repos/github/daviddexter/moment/badge.svg?branch=master)](https://coveralls.io/github/daviddexter/moment?branch=master)
+
 Moment package implements as inspired by momentjs
 
 Extract the time duration from unix seconds
