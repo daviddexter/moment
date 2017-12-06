@@ -1,28 +1,36 @@
 package moment
 
-import "time"
-import "errors"
-
-const (
-	secInMin     = 60
-	secInHour    = secInMin * 60
-	secInDay     = secInHour * 24
-	ADDOPERATION = "add"
-	SUBOPERATION = "sub"
-	HOURLEAP     = "hour"
-	DAYLEAP      = "day"
-	WEEKLEAP     = "week"
-	YEARLEAP     = "year"
+import (
+	"errors"
+	"time"
 )
 
-/*Strcuture for utiliy actions*/
+const (
+	secInMin  = 60
+	secInHour = secInMin * 60
+	secInDay  = secInHour * 24
+	//ADDOPERATION adds time
+	ADDOPERATION = "add"
+	//SUBOPERATION substracts time
+	SUBOPERATION = "sub"
+	//HOURLEAP hour leap step
+	HOURLEAP = "hour"
+	//DAYLEAP day leap step
+	DAYLEAP = "day"
+	//WEEKLEAP seven days leap step
+	WEEKLEAP = "week"
+	//YEARLEAP year leap step
+	YEARLEAP = "year"
+)
+
+//UtilBuilder Strcuture for utiliy actions
 type UtilBuilder struct {
 	Operation string
 	Leap      string
 	Step      int64
 }
 
-/*Add operation to add hour,day,week or year. Result depends on the leap*/
+//Add operation to add hour,day,week or year. Result depends on the leap
 func (v *UtilBuilder) Add(t time.Time) (res time.Time, err error) {
 	if v.Operation != ADDOPERATION {
 		err = errors.New("Invalid Operation")
@@ -45,7 +53,7 @@ func (v *UtilBuilder) Add(t time.Time) (res time.Time, err error) {
 	return
 }
 
-/*Subtract operation to add hour,day,week or year. Result depends on the leap*/
+//Sub operation to add hour,day,week or year. Result depends on the leap
 func (v *UtilBuilder) Sub(t time.Time) (res time.Time, err error) {
 	if v.Operation != SUBOPERATION {
 		err = errors.New("Invalid Operation")

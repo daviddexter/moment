@@ -25,18 +25,18 @@ Usage
 
     //get duration from now and unix epoch in seconds
 
-    d := moment.MomentFromSeconds(time.Now().Unix())
+    d := moment.FromSeconds(time.Now().Unix())
     dd := moment.HumanizeDuration(d)
 
 
     //get duration from now and unix epoch in nanoseconds
 
-    e := moment.MomentFromNanoSeconds(time.Now().UnixNano())
+    e := moment.FromNanoSeconds(time.Now().UnixNano())
     ee := moment.HumanizeDuration(e)
 
     //get duration between two points in seconds
 
-    f := moment.MomentFromSecondsPoints(pA,pB)
+    f := moment.FromSecondsPoints(pA,pB)
     ff := moment.HumanizeDuration(f)
 
     The same applies for MomentFromNanoSecondsPoints function

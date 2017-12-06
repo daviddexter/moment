@@ -5,26 +5,26 @@ import (
 	"time"
 )
 
-//Extract the time duration from unix seconds
+//FromSeconds Extract the time duration from unix seconds
 //Usage:
 //MomentFromSeconds(time.Now().Unix())
-func MomentFromSeconds(sec int64) time.Duration {
+func FromSeconds(sec int64) time.Duration {
 	e := time.Unix(sec, 0)
 	d := time.Now().Sub(e)
 	return d
 }
 
-//Extract the time duration from unix nanoseconds
+//FromNanoSeconds Extract the time duration from unix nanoseconds
 //Usage:
 //MomentFromNanoSeconds(time.Now().UnixNano())
-func MomentFromNanoSeconds(sec int64) time.Duration {
+func FromNanoSeconds(sec int64) time.Duration {
 	e := time.Unix(sec, 0)
 	d := time.Now().Sub(e)
 	return d
 }
 
-//Extract the time duration seconds of two different time points
-func MomentFromSecondsPoints(pA int64, pB int64) time.Duration {
+//FromSecondsPoints Extract the time duration seconds of two different time points
+func FromSecondsPoints(pA int64, pB int64) time.Duration {
 	//var d time.Duration
 	if pA > pB {
 		g := time.Unix(pA, 0)
@@ -32,16 +32,15 @@ func MomentFromSecondsPoints(pA int64, pB int64) time.Duration {
 		i := g.Sub(l)
 		return i
 
-	} else {
-		g := time.Unix(pB, 0)
-		l := time.Unix(pA, 0)
-		i := g.Sub(l)
-		return i
 	}
+	g := time.Unix(pB, 0)
+	l := time.Unix(pA, 0)
+	i := g.Sub(l)
+	return i
 }
 
-//Extract the time duration nanoseconds of two different time points
-func MomentFromNanoSecondsPoints(pA int64, pB int64) time.Duration {
+//FromNanoSecondsPoints Extract the time duration nanoseconds of two different time points
+func FromNanoSecondsPoints(pA int64, pB int64) time.Duration {
 	//var d time.Duration
 	if pA > pB {
 		g := time.Unix(pA, 0)
@@ -49,15 +48,14 @@ func MomentFromNanoSecondsPoints(pA int64, pB int64) time.Duration {
 		i := g.Sub(l)
 		return i
 
-	} else {
-		g := time.Unix(pB, 0)
-		l := time.Unix(pA, 0)
-		i := g.Sub(l)
-		return i
 	}
+	g := time.Unix(pB, 0)
+	l := time.Unix(pA, 0)
+	i := g.Sub(l)
+	return i
 }
 
-//Represents time duration as a map for fast readabilty and usage
+//HumanizeDuration Represents time duration as a map for fast readabilty and usage
 //with keys of "hours","minutes","seconds"
 func HumanizeDuration(d time.Duration) map[string]int64 {
 	var fm map[string]int64
